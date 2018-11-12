@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>麦克橘子店 - 欢迎大家来买橘子</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="What about you?Plentymore.,"> 
+    <meta name="author" content="MacrazdHao"> 
+    <link rel="alternative" href="atom.xml" title="麦克橘子店" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">css居中的10种写法（面试必考</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">css居中的10种写法（面试必考</h1>
+        <div class="stuff">
+            <span>十一月 13, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>github原文：<a href="https://github.com/yanhaijing/vertical-center" target="_blank" rel="noopener">https://github.com/yanhaijing/vertical-center</a></p>
+<p>博客原文：<a href="https://yanhaijing.com/css/2018/01/17/horizontal-vertical-center/" target="_blank" rel="noopener">https://yanhaijing.com/css/2018/01/17/horizontal-vertical-center/</a></p>
+<p>css居中作为Web前端中无可避免的话题，在面试中也是常常出现，可以说是面试必考。<br>以下是从掘金中一篇文章看到的10种居中方法，可以给大家作为参考<br>（当然一个没什么人气的博客只是写给自己看的哈哈哈 &nbsp;不过说不定能被搜到呢</p>
+<p>目录：<br>　仅居中元素定宽高适用</p>
+<ul>
+<li>absolute + 负margin</li>
+<li>absolute + margin auto</li>
+<li>absolute + calc</li>
+</ul>
+<p>　居中元素不定宽高</p>
+<ul>
+<li>absolute + transform</li>
+<li>lineheight</li>
+<li>writing-mode</li>
+<li>table</li>
+<li>css-table</li>
+<li>flex</li>
+<li>grid</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--公共代码（特殊排版会按具体情况列出）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box size"</span>&gt;</span>123123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*公共代码*/</span></span><br><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: green;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-class">.size</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="absolute-负margin"><a href="#absolute-负margin" class="headerlink" title="absolute + 负margin"></a>absolute + 负margin</h2><p>绝对定位的百分比是相对于父元素的宽高，通过这个特性可以让子元素的居中显示，但绝对定位是基于子元素的左上角，期望的效果是子元素的中心居中显示。<br>为了修正这个问题，可以借助外边距的负值，负的外边距可以让元素向相反方向定位，通过指定子元素的外边距为子元素宽度一半的负值，就可以让子元素居中了，css代码如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法较为简单，但必须知道父元素的宽高，所以比较繁琐。</p>
+<h2 id="absolute-margin-auto"><a href="#absolute-margin-auto" class="headerlink" title="absolute + margin auto"></a>absolute + margin auto</h2><p>与上一个方法类似，同样是使用绝对定位。其余则是对各方向设为0，然后margin设为auto即可。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法也是比较简单，同时不用知道父元素的宽高，但每次需要设置各个方向为0，不过这个只要设置一个通用布局就能解决，所以实际上不会太繁琐。</p>
+<h2 id="absolute-calc"><a href="#absolute-calc" class="headerlink" title="absolute + calc"></a>absolute + calc</h2><p>这个方法是利用了css3的新特性&mdash;&mdash;计算属性，这个方法类似<strong>absolute+负margin</strong>的方法，但这里不用定父元素的宽高（但要定子元素的），因为用了计算属性可以用百分比和具体数值来做计算。<br>这里的是用上和左方向的50%减去子元素的一半实现。<br>（顺便吐槽一下，之前写过一个网站没有发现计算属性这玩意儿，搞得脑阔疼，现在发现了简直豁然开朗发现新大陆啊！！！！<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="built_in">calc</span>(50% - 50px);</span><br><span class="line">    <span class="attribute">left</span>: <span class="built_in">calc</span>(50% - 50px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看起来十分高大上的一种方法！也免去了父元素定宽高的尴尬，写起来简洁爆了有木有，但是不能写成通用布局，每次都要写一遍calc也是有点蛋疼。</p>
+<h2 id="absolute-transform"><a href="#absolute-transform" class="headerlink" title="absolute + transform"></a>absolute + transform</h2><p>哈哈这里还是绝对布局，别介。<br>这个方法也不用定父元素宽高，也不用定子元素的宽高，这也是用了css3的新特性，不过是另外一个新特性&mdash;&mdash;transform，而这里用的是transfrom的translate属性。<br>这里介绍一下translate属性，这个属性可以设置百分比，该属性是css3的2d转换属性。个人感觉如果是直接填具体数值的话，有点像margin属性，不知道有没有感觉错；而如果用百分比的话，这个百分比是相对自身的宽高作的百分比，而非父元素的，这里和margin就有了区别。里面的位置参数顺序是<strong>左、上</strong>。<br>利用自身宽高百分比的原理，我们就容易理解了，top和left设为50%，然后两个参数都填-50%即可。原理也类似<strong>absolute+calc</strong>的方法，只不过这里连子元素的宽高都不用定了。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法完美排除定宽高的缺陷（不管是父还是子的），通用性也强，也可以作为通用布局使用，可以说通用性杠杠的了！唯一的不足是这种方法兼容性依赖translate2d的兼容性。</p>
+<h2 id="lineheight"><a href="#lineheight" class="headerlink" title="lineheight"></a>lineheight</h2><p>这个方法是将子元素设置为行内元素，父元素只要将text-align设为center即可设为水平居中，然后子元素设置vertical-align为middle即可垂直居中。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">    <span class="attribute">line-height</span>: initial;</span><br><span class="line">    <span class="attribute">text-align</span>: left; <span class="comment">/* 修正文字 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法不太友善的地方是需要在子元素中将文字显示重置为想要的效果。</p>
+<h2 id="writing-mode"><a href="#writing-mode" class="headerlink" title="writing-mode"></a>writing-mode</h2><p>估计很多人也是一样，在我看到这篇文章的原博文之前，根本没见过writing-mode这个属性，别说是用来干什么的了，一头雾水。<br>简单来讲，writing-mode这个属性就是可以将父元素中包含的行内元素的显示方向和排列方向，即纵向、横向及从左到右、从右到左，具体详细可以看看<a href="https://www.css88.com/book/css/properties/writing-modes/writing-mode.htm" target="_blank" rel="noopener"><strong>css参考手册</strong></a><br>而这其中最神奇的是，writing-mode不仅仅会影响显示和排列，甚至会影响到其css的作用方向，如width变成高度，text-align可以从水平居中变成垂直的居中！<br><strong>值得注意的是，祖父元素的writing-mode会影响到孙元素的排列，因此要在该孙元素的父元素writing-mode属性。</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wp-inner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>123123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">writing-mode</span>: vertical-lr;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wp-inner</span> &#123;</span><br><span class="line">    <span class="attribute">writing-mode</span>: horizontal-tb;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">    <span class="attribute">text-align</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方法较为复杂和繁琐，我也好不容易才理解了这玩意儿，果真实在是不太适合新手啊，酌情使用吧。</p>
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>曾经table被用来做页面布局，现在没人这么做了，但table也能够实现水平垂直居中，但是会增加很多冗余代码。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">"wp"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>123123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法虽然理解起来简单，但就是太麻烦而且太冗余，看起来都蛋疼，而且不算是table的正常用法，实在不太推荐。</p>
+<h2 id="css-table"><a href="#css-table" class="headerlink" title="css-table"></a>css-table</h2><p>css-table是css中display的的新特性，可以让我们把普通元素，变为table元素的现实效果，通过这个特性也可以实现水平垂直居中。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法和table的原理一样，兼容性也ok，最重要的是没那么冗余，相比起<strong>table</strong>的方法，更推荐这种。</p>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>flex作为现代布局方案，颠覆了过去的经验，实现居中也仅需给父元素添加短短几行代码，十分的高大上。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>目前移动端已经兼容flex布局，高端大气上档次，推荐。</p>
+<h2 id="grid"><a href="#grid" class="headerlink" title="grid"></a>grid</h2><p>css中display的新特性，grid栅格化布局，实现起来也是十分简易，理解起来也不难。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wp</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">    <span class="attribute">justify-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法使用的grid布局虽然也实现了居中，但是对于兼容性方面来讲就不太ok了，比不了flex布局，所以还是推荐<strong>flex</strong>的方法多一点，不推荐这个。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下面对比下各个方式的优缺点，肯定又双叒叕该有同学说回字的写法了，简单总结下：</p>
+<ul>
+<li>PC端有兼容性要求，宽高固定，推荐absolute + 负margin</li>
+<li>PC端有兼容要求，宽高不固定，推荐css-table</li>
+<li>PC端无兼容性要求，推荐flex</li>
+<li>移动端推荐使用flex<br>小贴士：关于flex的兼容性决方案，请看这里《<a href="https://yanhaijing.com/css/2016/08/21/flex-practice-on-mobile/" target="_blank" rel="noopener">移动端flex布局实战</a>》</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>居中元素定宽高固定</th>
+<th>PC兼容性</th>
+<th>移动端兼容性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>absolute + 负margin</td>
+<td>是</td>
+<td>ie6+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>absolute + margin auto</td>
+<td>是</td>
+<td>ie6+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>absolute + calc</td>
+<td>是</td>
+<td>ie9+, chrome19+, firefox4+</td>
+<td>安卓4.4+, iOS6+</td>
+</tr>
+<tr>
+<td>absolute + transform</td>
+<td>否</td>
+<td>ie9+, chrome4+, firefox3.5+</td>
+<td>安卓3+, iOS6+</td>
+</tr>
+<tr>
+<td>writing-mode</td>
+<td>否</td>
+<td>ie6+, chrome4+, firefox3.5+</td>
+<td>安卓2.3+, iOS5.1+</td>
+</tr>
+<tr>
+<td>lineheight</td>
+<td>否</td>
+<td>ie6+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>table</td>
+<td>否</td>
+<td>ie6+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>css-table</td>
+<td>否</td>
+<td>ie8+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>否</td>
+<td>ie10+, chrome4+, firefox2+</td>
+<td>安卓2.3+, iOS6+</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>否</td>
+<td>ie10+, chrome57+, firefox52+</td>
+<td>安卓6+, iOS10.3+</td>
+</tr>
+</tbody>
+</table>
+<p>另出个小题目：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"red blue"</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blue red"</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.blue</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例答案<a href="http://www.w3school.com.cn/tiy/t.asp?f=csse_dim_line-height_percent" target="_blank" rel="noopener">点这里</a><br>答错的童鞋请自动去补一补css基础知识。<br>问两个div的颜色分别是什么，竟然只有40%的同学能够答对，这40%中还有很多同学不知道为什么，希望这些同学好好补习下CSS基础，下面给大家推荐几本CSS的书籍：</p>
+<ul>
+<li><a href="https://amazon.cn/gp/product/B00M2DKZ1W/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=yanhaijing-23&amp;creative=3200&amp;linkCode=as2&amp;creativeASIN=B00M2DKZ1W&amp;linkId=b7b8130f4f0da8be122691521b9bae47" target="_blank" rel="noopener">CSS设计指南</a>（最好的入门书）</li>
+<li><a href="https://amazon.cn/gp/product/B00LHL3DV4/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=yanhaijing-23&amp;creative=3200&amp;linkCode=as2&amp;creativeASIN=B00LHL3DV4&amp;linkId=1fcb124655bbe765eecd9ca84af6f6ba" target="_blank" rel="noopener">图解CSS3</a>（最好的CSS3入门）</li>
+<li><a href="https://amazon.cn/gp/product/B0788XRYGF/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=yanhaijing-23&amp;creative=3200&amp;linkCode=as2&amp;creativeASIN=B0788XRYGF&amp;linkId=d6295dbff4749b7584891ba004214edb" target="_blank" rel="noopener">CSS世界</a>（CSS进阶）</li>
+<li><a href="https://amazon.cn/gp/product/B01ET3FO86/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=yanhaijing-23&amp;creative=3200&amp;linkCode=as2&amp;creativeASIN=B01ET3FO86&amp;linkId=bc697a9006483f55e36256f5458df5e8" target="_blank" rel="noopener">CSS揭秘</a>（CSS高手）<br>喜欢看网络资料同学，可以看看MDN的这个<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started" target="_blank" rel="noopener">CSS入门教程</a>，强烈推荐，英语好的同学建议看英文版。<br>不说了，其实cv了大半篇，这小题目我都答错了（捂脸，我要去补一补css基础知识了！！！！</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="https://m10.music.126.net/20181112200802/d0ac8d95115b857ccdab9b0435f80026/ymusic/2e28/48b7/332a/2e679030b68713326cbd9a9e89bd86d5.mp3"></li>
+                    
+                        <li title="1" data-url="https://m10.music.126.net/20181112201324/a91e545956d4597831a40eb4b79f9905/ymusic/7217/4d35/e397/e8a4c958c1ccc710cdc50e857653b08b.mp3"></li>
+                    
+                        <li title="2" data-url="https://m10.music.126.net/20181112201855/6b18462efcc2a507d83a4dd6d949b8a4/ymusic/4710/249e/573c/7d4424268acf09ea093a601db93e9fe8.mp3"></li>
+                    
+                        <li title="3" data-url="https://m10.music.126.net/20181112202028/4eeb4ed883ca5e2889e46154ca3a649b/ymusic/2b03/22e6/f23f/b791d95874fe81334b3c0ad84b3f8a3c.mp3"></li>
+                    
+                        <li title="4" data-url="https://m10.music.126.net/20181112202149/7cfc724b628e60ab60b84a973d10d18f/ymusic/977c/5903/0ab3/3cb88bfb8e0b02a605df59e2f82b7809.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
