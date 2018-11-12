@@ -462,6 +462,19 @@ $(function() {
                 }
                 return false;
                 break;
+            //downArrow
+            case (tag.indexOf('downarrow') != -1):
+                if(scroll_top=$(document).scrollTop()!=0) return;
+                var tol=$(window).height();
+                var now=0;
+                let timer=setInterval(()=>{
+                    now+=8;
+                    $(window).scrollTop(now);
+                    if(now>=tol){
+                        clearInterval(timer);
+                    }
+                },1);
+                break;
               // comment
             case - 1 != tag.indexOf("comment"): 
                 Diaspora.loading(),
