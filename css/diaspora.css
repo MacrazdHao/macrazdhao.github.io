@@ -297,13 +297,13 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   }
   #down2{
     margin-top: -70px;
-    animation: downArrowMove2 2s linear infinite;
+    animation: downArrowMove3 2s linear infinite;
   }
   @keyframes downArrowMove{
     from{transform: translateY(0);}
     to{transform: translateY(5px);}
   }
-  @keyframes downArrowMove2{
+  @keyframes downArrowMove3{
     0%{transform: translateY(0px);opacity: 0;}
     30%{transform: translateY(0.75px);opacity: .3;}
     50%{transform: translateY(2.5px);opacity: 0;}
