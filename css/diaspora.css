@@ -241,6 +241,36 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .content .highlight .line {height:20px;}
 .content .video-container {position:relative;padding-bottom:56.25%;padding-top:25px;height:0;}
 .content .video-container iframe {position:absolute;top:0;left:0;width:100%;height:100%;}
+#friends{
+  display: flex;
+  flex-direction: row;
+}
+#friBlog{
+  height: 110px;
+  width: 150px;
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+}
+#friBlog p{
+  height: auto;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+  cursor: pointer;
+  -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  user-select: none;
+}
+#friAvatar{
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
 pre .comment,pre .title {color:#999;}
 pre .variable,pre .attribute,pre .tag,pre .regexp,pre .ruby .constant,pre .xml .tag,pre .title,pre .xml .pi,pre .xml .doctype,pre .html .doctype,pre .css .id,pre .css .class,pre .css .pseudo {color:#f2777a;}
 pre .number,pre .preprocessor,pre .built_in,pre .literal,pre .params,pre .constant {color:#f99157;}
@@ -345,5 +375,9 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article .main{width:94%;}
   .article .side {display:none}
   .comment .gt-btn-public .gt-btn-text:after{content:"";}
+  #friends{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
