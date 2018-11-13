@@ -60,6 +60,51 @@
 <p><a href="https://cloud.tencent.com/developer/article/1198841" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1198841</a></p>
 <p>申请后即自动转为https，无需以上文章中的其余操作。</p>
 <hr>
+<p>新建模板：</p>
+<blockquote>
+<p>$ hexo init “文件夹名”</p>
+<p>$ cd “文件夹名”</p>
+<p>$ npm install</p>
+</blockquote>
+<p>具体文件夹说明请看官方文档：<a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/setup</a></p>
+<hr>
+<p>更换主题：</p>
+<ul>
+<li><p>在官网 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 选择好主题，并用github clone到本地</p>
+</li>
+<li><p>将clone下来的主题放入我们blog主目录下的themes文件夹</p>
+</li>
+<li><p>修改主目录的_config.yml中的这一行</p>
+</li>
+</ul>
+<blockquote>
+<p>theme: [添加的主题文件夹名]</p>
+</blockquote>
+<hr>
+<p>简易说明：</p>
+<ul>
+<li>新建文章：</li>
+</ul>
+<blockquote>
+<p>$ hexo new “name”</p>
+</blockquote>
+<ul>
+<li>更新页面：</li>
+</ul>
+<blockquote>
+<p>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
+</blockquote>
+<ul>
+<li>本地调试：</li>
+</ul>
+<blockquote>
+<p>$ hexo server</p>
+</blockquote>
+<pre><code>然后浏览器输入localhost:4000就可以看到页面了
+</code></pre><ul>
+<li>hexo官方中文文档：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></li>
+</ul>
+<hr>
 <p>执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d时，（以下均需要进到.deploy_git目录中git bash输入</p>
 <p>出现fatal: HttpRequestException encountered错误的解决办法：</p>
 <p><a href="http://www.bubuko.com/infodetail-2551073.html" target="_blank" rel="noopener">http://www.bubuko.com/infodetail-2551073.html</a></p>
@@ -70,13 +115,6 @@
 <p>（这里global前面是两个横杆</p>
 <p><a href="https://yq.aliyun.com/php/472" target="_blank" rel="noopener">https://yq.aliyun.com/php/472</a></p>
 <hr>
-<p>简易说明：</p>
-<ul>
-<li><p>新建文章：hexo new “name”</p>
-</li>
-<li><p>更新页面：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
-</li>
-</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
