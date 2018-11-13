@@ -297,6 +297,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   }
   #down2{
     margin-top: -70px;
+    animation: downArrowMove2 2s linear infinite;
   }
   @keyframes downArrowMove{
     from{transform: translateY(0);}
