@@ -115,6 +115,30 @@
 <p>（这里global前面是两个横杆</p>
 <p><a href="https://yq.aliyun.com/php/472" target="_blank" rel="noopener">https://yq.aliyun.com/php/472</a></p>
 <hr>
+<p>评论插件Gitalk的使用：</p>
+<p>相关文章：<a href="https://segmentfault.com/a/1190000014085547" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014085547</a></p>
+<p>其中文章中<strong>集成Gitalk</strong>的这个文件 <em>/[themeName]/layout/_partial/comment.ejs</em> 在我的模板中没有，类似的文件倒是见到了一个，就是 <em>/themes/diaspora/layout/post/gitalk.ejs</em> ，这个文件的内容也是已经弄好了的，所以这一步我没弄，但是结果看来并没有影响到使用。</p>
+<p>可能是因为我的主题本身已经集成了Gitalk的原因吧。（我也是新手，不太懂</p>
+<p>另外接下来说到的这个文件 <em>icalm/_config.yml</em> ，注意了，<strong>icalm</strong>是这篇文章作者的主题名，这个你要按你自己的实际主题名称来，别改错地方了，比如我的主题是diaspora，那么目录地址就是 <em>diaspora/_config.yml</em> 。</p>
+<p>说到主题目录下的_config.yml配置，我在这再给一个实例吧，不然不知道有些该则呢填（可能是因为我自己懵逼，总之写出来没坏处，更方便理解。</p>
+<p>然后附上我的实例：</p>
+<blockquote>
+<p>gitalk:</p>
+<p>   autoExpand: true</p>
+<p>   clientID: ‘手动屏蔽’</p>
+<p>   clientSecret: ‘手动屏蔽’</p>
+<p>   repo: ‘macrazdhao.github.io’</p>
+<p>   owner: ‘macrazdhao’</p>
+<p>   admin: ‘macrazdhao’</p>
+<p>   id: location.pathname</p>
+<p>   distractionFreeMode: true</p>
+</blockquote>
+<p>然后最后一步就是添加issue了：</p>
+<ul>
+<li>在你Blog的repo里面点 <strong>Issue</strong> </li>
+<li>点击 <strong>New issue</strong>，随便输入点东西</li>
+<li>点 <strong>Submit new issue</strong> 就搞定了</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -137,7 +161,7 @@
             
         </div>
         
-    <div id="gitalk-container" class="comment link" data-ae="true" data-ci="335c3413450f9d91a78a" data-cs="ba312c821bf1751ea2220453221efb09460057d4" data-r="macrazdhao.github.io" data-o="macrazdhao" data-a="macrazdhao" data-d="false">查看评论</div>
+    <div id="gitalk-container" class="comment link" data-ae="true" data-ci="335c3413450f9d91a78a" data-cs="ba312c821bf1751ea2220453221efb09460057d4" data-r="macrazdhao.github.io" data-o="macrazdhao" data-a="macrazdhao" data-d="true">查看评论</div>
 
 
     </div>
