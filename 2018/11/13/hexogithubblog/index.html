@@ -53,24 +53,33 @@
 
         </div>
         <div class="content markdown">
-            <p>前期步骤详见：<a href="https://blog.csdn.net/ainuser/article/details/77609180" target="_blank" rel="noopener">https://blog.csdn.net/ainuser/article/details/77609180</a></p>
+            <h2><span id="目录">目录</span></h2><!-- toc -->
+<ul>
+<li><a href="#前期步骤">前期步骤</a></li>
+<li><a href="#域名https需要申请ssl证书">域名https需要申请ssl证书</a></li>
+<li><a href="#新建模板">新建模板</a></li>
+<li><a href="#更换主题">更换主题</a></li>
+<li><a href="#简易常用命令说明">简易常用命令说明</a></li>
+<li><a href="#评论插件gitalk的使用">评论插件Gitalk的使用</a></li>
+<li><a href="#让谷歌搜索到github博客">让谷歌搜索到github博客</a></li>
+<li><a href="#hexo-markdown添加目录">Hexo Markdown添加目录</a></li>
+</ul>
+<!-- tocstop -->
+<h3><span id="前期步骤">前期步骤</span></h3><p><a href="https://blog.csdn.net/ainuser/article/details/77609180" target="_blank" rel="noopener">https://blog.csdn.net/ainuser/article/details/77609180</a></p>
 <p>域名解析配置时，主机记录www项中，点击记录类型选择CNAME。</p>
 <hr>
-<p>域名https需要申请ssl证书：</p>
-<p>（这里仅申请即可）</p>
+<h3><span id="域名https需要申请ssl证书">域名https需要申请ssl证书</span></h3><p>（这里仅申请即可）</p>
 <p><a href="https://cloud.tencent.com/developer/article/1198841" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1198841</a></p>
 <p>申请后即自动转为https，无需以上文章中的其余操作。</p>
 <hr>
-<p>新建模板：</p>
-<blockquote>
+<h3><span id="新建模板">新建模板</span></h3><blockquote>
 <p>$ hexo init “文件夹名”</p>
 <p>$ cd “文件夹名”</p>
 <p>$ npm install</p>
 </blockquote>
 <p>具体文件夹说明请看官方文档：<a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/setup</a></p>
 <hr>
-<p>更换主题：</p>
-<ul>
+<h3><span id="更换主题">更换主题</span></h3><ul>
 <li><p>在官网 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 选择好主题，并用github clone到本地</p>
 </li>
 <li><p>将clone下来的主题放入我们blog主目录下的themes文件夹</p>
@@ -82,8 +91,7 @@
 <p>theme: [添加的主题文件夹名]</p>
 </blockquote>
 <hr>
-<p>简易说明：</p>
-<ul>
+<h3><span id="简易常用命令说明">简易常用命令说明</span></h3><ul>
 <li>新建文章：</li>
 </ul>
 <blockquote>
@@ -116,8 +124,7 @@
 <p>（这里global前面是两个横杆</p>
 <p><a href="https://yq.aliyun.com/php/472" target="_blank" rel="noopener">https://yq.aliyun.com/php/472</a></p>
 <hr>
-<p>评论插件Gitalk的使用：</p>
-<p>相关文章：<a href="https://segmentfault.com/a/1190000014085547" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014085547</a></p>
+<h3><span id="评论插件gitalk的使用">评论插件Gitalk的使用</span></h3><p>相关文章：<a href="https://segmentfault.com/a/1190000014085547" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014085547</a></p>
 <p>其中文章中<strong>集成Gitalk</strong>的这个文件 <em>/[themeName]/layout/_partial/comment.ejs</em> 在我的模板中没有，类似的文件倒是见到了一个，就是 <em>/themes/diaspora/layout/post/gitalk.ejs</em> ，这个文件的内容也是已经弄好了的，所以这一步我没弄，但是结果看来并没有影响到使用。</p>
 <p>可能是因为我的主题本身已经集成了Gitalk的原因吧。（我也是新手，不太懂</p>
 <p>另外接下来说到的这个文件 <em>icalm/_config.yml</em> ，注意了，<strong>icalm</strong>是这篇文章作者的主题名，这个你要按你自己的实际主题名称来，别改错地方了，比如我的主题是diaspora，那么目录地址就是 <em>diaspora/_config.yml</em> 。</p>
@@ -142,9 +149,31 @@
 <li>点 <strong>Submit new issue</strong> 就搞定了</li>
 </ul>
 <hr>
-<p>让谷歌搜索到github博客：</p>
-<p>参考资料：<a href="https://www.jianshu.com/p/df46bca5889d" target="_blank" rel="noopener">https://www.jianshu.com/p/df46bca5889d</a></p>
+<h3><span id="让谷歌搜索到github博客">让谷歌搜索到github博客</span></h3><p>参考资料：<a href="https://www.jianshu.com/p/df46bca5889d" target="_blank" rel="noopener">https://www.jianshu.com/p/df46bca5889d</a></p>
 <hr>
+<h3><span id="hexo-markdown添加目录">Hexo Markdown添加目录</span></h3><p>参考文章：<a href="https://www.imys.net/20150514/hexo-toc.html" target="_blank" rel="noopener">https://www.imys.net/20150514/hexo-toc.html</a></p>
+<ul>
+<li><p>终端下安装plugin：</p>
+<blockquote>
+<p>$ npm install hexo-toc –save</p>
+</blockquote>
+</li>
+<li><p>在博客根目录的_config.yml添加配置：</p>
+<blockquote>
+<p>toc:</p>
+<p>  maxDepth: 3<br>此处maxDepth为3表示生成最深深度为3级目录，可按需求更改</p>
+</blockquote>
+</li>
+<li><p>在Markdown文档使用：</p>
+<blockquote>
+<p>任何地方输入以下语句即生成目录</p>
+<p>&lt;!– toc –&gt;</p>
+<p>（这里是左右各两个横杆-，别看成一个了！还有！toc是小写，两个各一个空格，千万不能漏！<br>注意：生成的目录内容为该行语句往下的内容，往上的内容不会录入</p>
+</blockquote>
+</li>
+</ul>
+<p>貌似还会有一些奇怪的问题，比如目录点击后不会跳转，但是我没遇到这个问题。如果有遇到这些问题的可以去参考文章看看。</p>
+<p>另附：Markdown特殊符号输入代码<br><a href="https://www.cnblogs.com/cheese320/p/8906179.html" target="_blank" rel="noopener">https://www.cnblogs.com/cheese320/p/8906179.html</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
