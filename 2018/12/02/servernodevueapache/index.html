@@ -27,7 +27,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">从服务器搭建node.js+Express+Knex+Mysql环境到Apache2部署</h3>
+    <h3 class="subtitle">从服务器搭建Node.js+Express+Knex+Mysql环境到Apache2部署</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -44,7 +44,7 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">从服务器搭建node.js+Express+Knex+Mysql环境到Apache2部署</h1>
+        <h1 class="title">从服务器搭建Node.js+Express+Knex+Mysql环境到Apache2部署</h1>
         <div class="stuff">
             <span>十二月 02, 2018</span>
             
@@ -55,11 +55,11 @@
         <div class="content markdown">
             <h1><span id="前言">前言</span></h1><p>此篇文章用于记录我在为写毕设而搭建服务器环境到Apache2部署中的步骤，及遇到的问题，避免以后用到的时候又要使劲百度谷歌，打开一堆页面看着难受死了（窗口密集恐惧症了解一下哈哈哈哈哈哈。本文内容仅供参考，有什么差错或者问题，请轻喷，或者给我点意见，提出问题也行~~咧咯咧咯咧咯咧咯咧咯….</p>
 <h2><span id="环境介绍">环境介绍</span></h2><ul>
-<li><p>系统：ubuntu 16.04</p>
+<li><p>系统：Ubuntu 16.04</p>
 </li>
-<li><p>搭建：node.js</p>
+<li><p>搭建：Node.js</p>
 </li>
-<li><p>框架：express + knex</p>
+<li><p>框架：Express + Knex</p>
 </li>
 <li><p>Web服务器：Apache</p>
 </li>
@@ -68,7 +68,7 @@
 </ul>
 <h2><span id="目录">目录</span></h2><!-- toc -->
 <ul>
-<li><a href="#安装nodejs环境">安装node.js环境</a></li>
+<li><a href="#安装nodejs环境">安装Node.js环境</a></li>
 <li><a href="#安装express框架">安装Express框架</a></li>
 <li><a href="#生成express应用程序模板">生成Express应用程序模板</a></li>
 <li><a href="#安装mysql">安装Mysql</a></li>
@@ -81,8 +81,8 @@
 <li><a href="#总结">总结</a></li>
 </ul>
 <!-- tocstop -->
-<h3><span id="安装nodejs环境">安装node.js环境</span></h3><p>实际上安装node.js环境非常简单，只需要两条命令。<br>然而我一开始百度到的，非常复杂，要输入好几条命令，还要指定nodejs版本巴拉巴拉的，然后各种错误，删了又装了又删….最后发现只需要这两条命令….（可能我太蠢了，哭唧唧</p>
-<p>为了保证获取的node.js和npm是最新版本，首先刷新一下本地包索引</p>
+<h3><span id="安装nodejs环境">安装Node.js环境</span></h3><p>实际上安装Node.js环境非常简单，只需要两条命令。<br>然而我一开始百度到的，非常复杂，要输入好几条命令，还要指定Nodejs版本巴拉巴拉的，然后各种错误，删了又装了又删….最后发现只需要这两条命令….（可能我太蠢了，哭唧唧</p>
+<p>为了保证获取的Node.js和npm是最新版本，首先刷新一下本地包索引</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get update</span><br><span class="line"><span class="meta">$</span> sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 <p>然后就是安装这俩玩意儿了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get install nodejs</span><br><span class="line"><span class="meta">$</span> sudo apt-get install npm</span><br></pre></td></tr></table></figure>
@@ -90,14 +90,14 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> node --version</span><br><span class="line"><span class="meta">$</span> npm -v</span><br></pre></td></tr></table></figure>
 <p>如果有版本号输出，且没有错误的话就表示安装成功了</p>
 <p>附：</p>
-<p>如果要删除npm或者node.js，可以执行以下命令：</p>
+<p>如果要删除npm或者Node.js，可以执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get remove nodejs</span><br><span class="line"><span class="meta">$</span> sudo apt-get remove npm</span><br></pre></td></tr></table></figure>
 <p>注意：有个坑！~不要用autoremove，可能会把还需要的软件也被卸掉！</p>
-<h3><span id="安装express框架">安装Express框架</span></h3><p>安装完node.js和npm这俩玩意儿之后，我们新建一个文件夹，进入。然后初始化npm，安装依赖库，命令如下：</p>
+<h3><span id="安装express框架">安装Express框架</span></h3><p>安装完Node.js和npm这俩玩意儿之后，我们新建一个文件夹，进入。然后初始化npm，安装依赖库，命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo mkdir myapp</span><br><span class="line"><span class="meta">$</span> cd myapp</span><br><span class="line"><span class="meta">$</span> sudo npm init</span><br><span class="line"><span class="meta">$</span> sudo npm install</span><br></pre></td></tr></table></figure>
 <p>注意：这里npm init一定要sudo，不然有可能会权限不足初始化失败，因为这里初始化时要创建文件的，创建文件需要一定权限。</p>
 <p>输入sudo npm init之后，会让你填程序信息，名称、版本、描述、文件入口（默认index.js）、测试指令、git仓库、关键字、作者、版权，如果都选择默认，皆可直接Enter跳过。</p>
-<p>接下来就是安装express框架了：</p>
+<p>接下来就是安装Express框架了：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install express --save</span><br></pre></td></tr></table></figure>
 <p>附：临时安装express，而不添加进依赖列表，则执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install express --no-save</span><br></pre></td></tr></table></figure>
