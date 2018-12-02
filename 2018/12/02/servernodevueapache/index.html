@@ -169,6 +169,7 @@
 <p>唯一踩到的坑是，本地文件是拉不进服务器linux的根目录的，会提示 Permission denied ，只能拉到 /home/[username]/ 里面，解决办法没仔细找，我只是将dist拉到 /home/[username]/ 里面，然后移动到/var/www目录的：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo mv ./dist/* ../../var/www/html</span><br></pre></td></tr></table></figure>
 <p>注：当前目录为 /home/[username]/</p>
+<p>移动过去之后，输入你的服务器ip（不用端口），就能成功看到页面了!!!</p>
 <p>WinSCP下载地址：<a href="https://winscp.net/eng/download.php" target="_blank" rel="noopener">https://winscp.net/eng/download.php</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
