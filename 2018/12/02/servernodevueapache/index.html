@@ -27,7 +27,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">从服务器搭建Node.js+Express+Knex+Mysql环境到Apache2部署</h3>
+    <h3 class="subtitle">从服务器搭建Node.js+Express/Koa2+Knex+Mysql环境到Apache2部署</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -44,11 +44,11 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">从服务器搭建Node.js+Express+Knex+Mysql环境到Apache2部署</h1>
+        <h1 class="title">从服务器搭建Node.js+Express/Koa2+Knex+Mysql环境到Apache2部署</h1>
         <div class="stuff">
             <span>十二月 02, 2018</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/apache/">apache</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/express/">express</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/js/">js</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/knex/">knex</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/mysql/">mysql</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/node-js/">node.js</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/npm/">npm</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/winSCP/">winSCP</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/apache/">apache</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/express/">express</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/js/">js</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/knex/">knex</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/koa/">koa</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/mysql/">mysql</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/node-js/">node.js</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/npm/">npm</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/winSCP/">winSCP</a></li></ul>
 
 
         </div>
@@ -57,9 +57,7 @@
 <h2><span id="环境介绍">环境介绍</span></h2><ul>
 <li><p>系统：Ubuntu 16.04</p>
 </li>
-<li><p>搭建：Node.js</p>
-</li>
-<li><p>框架：Express + Knex</p>
+<li><p>后端：Node.js + Express + Knex</p>
 </li>
 <li><p>Web服务器：Apache</p>
 </li>
@@ -68,9 +66,12 @@
 </ul>
 <h2><span id="目录">目录</span></h2><!-- toc -->
 <ul>
-<li><a href="#安装nodejs环境">安装Node.js环境</a></li>
-<li><a href="#安装express框架">安装Express框架</a></li>
-<li><a href="#生成express应用程序模板">生成Express应用程序模板</a></li>
+<li><a href="#安装nodejs环境">安装Node.js环境</a><ul>
+<li><a href="#更新nodejs">更新Node.js</a></li>
+</ul>
+</li>
+<li><a href="#安装expresskoa框架">安装Express/Koa框架</a></li>
+<li><a href="#生成expresskoa应用程序模板">生成Express/Koa应用程序模板</a></li>
 <li><a href="#安装mysql">安装Mysql</a></li>
 <li><a href="#mysql创建新数据库及其建表">Mysql创建新数据库及其建表</a></li>
 <li><a href="#安装knexjs">安装Knex.js</a></li>
@@ -93,20 +94,32 @@
 <p>如果要删除npm或者Node.js，可以执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get remove nodejs</span><br><span class="line"><span class="meta">$</span> sudo apt-get remove npm</span><br></pre></td></tr></table></figure>
 <p>注意：有个坑！~不要用autoremove，可能会把还需要的软件也被卸掉！</p>
-<h3><span id="安装express框架">安装Express框架</span></h3><p>安装完Node.js和npm这俩玩意儿之后，我们新建一个文件夹，进入。然后初始化npm，安装依赖库，命令如下：</p>
+<h4><span id="更新nodejs">更新Node.js</span></h4><p>今天发现一个问题…根据上面的方法安装的Node不是最新版！！于是找了下更新的方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt update -y</span><br><span class="line"><span class="meta">$</span> sudo apt install -y nodejs nodejs-legacy npm</span><br><span class="line"><span class="meta">$</span> sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line"><span class="meta">$</span> sudo npm install n -g</span><br><span class="line"><span class="meta">$</span> sudo n stable</span><br></pre></td></tr></table></figure>
+<p>#####！！重点踩坑高能！！<br>刚刚发现更新之后 node -v 查看版本，发现版本还是旧的！<br>解决办法参考：</p>
+<p><a href="https://www.jb51.net/article/98153.htm" target="_blank" rel="noopener">https://www.jb51.net/article/98153.htm</a></p>
+<p>附加说明：<br>n是一个Node工具包，它提供了几个升级命令参数：</p>
+<blockquote>
+<p>n                              显示已安装的Node版本<br>n latest                       安装最新版本Node<br>n stable                       安装最新稳定版Node<br>n lts                          安装最新长期维护版(lts)Node<br>n <version>                    根据提供的版本号安装Node</version></p>
+</blockquote>
+<h3><span id="安装expresskoa框架">安装Express/Koa框架</span></h3><p>安装完Node.js和npm这俩玩意儿之后，我们新建一个文件夹，进入。然后初始化npm，安装依赖库，命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo mkdir myapp</span><br><span class="line"><span class="meta">$</span> cd myapp</span><br><span class="line"><span class="meta">$</span> sudo npm init</span><br><span class="line"><span class="meta">$</span> sudo npm install</span><br></pre></td></tr></table></figure>
 <p>注意：这里npm init一定要sudo，不然有可能会权限不足初始化失败，因为这里初始化时要创建文件的，创建文件需要一定权限。</p>
 <p>输入sudo npm init之后，会让你填程序信息，名称、版本、描述、文件入口（默认index.js）、测试指令、git仓库、关键字、作者、版权，如果都选择默认，皆可直接Enter跳过。</p>
 <p>接下来就是安装Express框架了：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install express --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install express --save</span><br><span class="line"><span class="meta">$</span> sudo npm i koa</span><br></pre></td></tr></table></figure>
 <p>附：临时安装express，而不添加进依赖列表，则执行以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install express --no-save</span><br></pre></td></tr></table></figure>
-<h3><span id="生成express应用程序模板">生成Express应用程序模板</span></h3><p>通过应用生成器express-generator可以快速创建一个Express框架的骨架模板。其中express-generator也包含了express命令行工具。</p>
-<p>安装express-generator工具：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install express-generator -g</span><br><span class="line"><span class="meta">$</span> express -h  //可查看所有可用命令行参数</span><br></pre></td></tr></table></figure>
-<p>然后我们用其来创建一个叫myapp的Express应用，并安装依赖包：</p>
+<h3><span id="生成expresskoa应用程序模板">生成Express/Koa应用程序模板</span></h3><p>通过应用生成器express-generator/koa-generator可以快速创建一个Express/Koa框架的骨架模板。其中express-generator也包含了express命令行工具（koa同）。</p>
+<p>安装express-generator/koa-generator工具：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install express-generator -g</span><br><span class="line"><span class="meta">$</span> sudo npm install -g koa-generator</span><br><span class="line"><span class="meta">$</span> express -h  //可查看所有可用命令行参数</span><br><span class="line"><span class="meta">$</span> koa -h</span><br></pre></td></tr></table></figure>
+<p>然后我们用其来创建一个叫myapp的Express应用/myapp2的Koa应用，并安装依赖包：</p>
+<p>Express：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo express --view=pug myapp</span><br><span class="line"><span class="meta">$</span> cd myapp</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
+<p>Koa：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo koa2 myapp2</span><br><span class="line"><span class="meta">$</span> cd myapp2</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
 <p>创建好了之后，我们就可以通过以下命令来启动应用了：</p>
+<p>Express：</p>
 <p>MacOS/Linux</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> DEBUG=myapp:* npm start</span><br></pre></td></tr></table></figure>
 <p>Windows</p>
@@ -116,6 +129,13 @@
 <p>接下来看到浏览器页面显示以下内容，即表示模板创建并运行成功。</p>
 <blockquote>
 <p>Express<br>Welcome to Express</p>
+</blockquote>
+<p>Koa：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm start</span><br></pre></td></tr></table></figure>
+<p>项目启动后，默认端口号是3000。</p>
+<p>接下来看到浏览器页面显示以下内容，即表示模板创建并运行成功。</p>
+<blockquote>
+<p>Hello Koa 2!<br>Welcome to Hello Koa 2!</p>
 </blockquote>
 <h3><span id="安装mysql">安装Mysql</span></h3><p>同样的，为了保证版本最新，首先刷新本地包索引</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt-get update</span><br><span class="line"><span class="meta">$</span> sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
@@ -148,8 +168,12 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from unit;</span><br></pre></td></tr></table></figure>
 <p>注意：每次输入sql语句的时候，必须在后面加上分号’;’，否则不会执行（忘记输入分后，可以按 Ctrl + c + Enter 退出输入）。</p>
 <p>参考自：<a href="https://www.linuxidc.com/Linux/2016-12/138081.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-12/138081.htm</a></p>
-<h3><span id="安装knexjs">安装Knex.js</span></h3><p>在刚才的Express应用程序根目录下，输入：</p>
+<h3><span id="安装knexjs">安装Knex.js</span></h3><p>在刚才的Express/Koa2应用程序根目录下，输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo npm install mysql</span><br><span class="line"><span class="meta">$</span> sudo npm install knex --save</span><br></pre></td></tr></table></figure>
+<p>Knex使用相关说明可参考：</p>
+<p><a href="https://blog.csdn.net/liuyueyi1995/article/details/53782047?locationNum=3&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/liuyueyi1995/article/details/53782047?locationNum=3&amp;fps=1</a></p>
+<p>以下是一篇关于一个基于Knex的ORM库Bookshelf的文章：</p>
+<p><a href="https://www.jianshu.com/p/0a6dd4be9438" target="_blank" rel="noopener">https://www.jianshu.com/p/0a6dd4be9438</a></p>
 <h3><span id="使用knex连接数据库">使用Knex连接数据库</span></h3><p>新建一个js文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo vi test.js</span><br></pre></td></tr></table></figure>
 <p>创建并进入编辑文件，按一次键盘的Insert键，输入以下代码：</p>
